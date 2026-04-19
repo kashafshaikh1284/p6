@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Resources Dashboard</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <main class="dashboard-container">
+        <header>
+            <h1>Cloud Platform <span class="accent">Overview</span></h1>
+            <p>Live resource metrics from the PaaS instance</p>
+        </header>
+
+        <section class="metrics-grid">
+            
+            <!-- CPU Metric Card -->
+            <div class="metric-card glass-panel" id="cpu-card">
+                <div class="metric-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <h2>CPU Usage</h2>
+                <div class="metric-value">
+                    <span id="cpu-value">--</span><span class="unit">%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="cpu-bar"></div>
+                </div>
+            </div>
+
+            <!-- Memory Metric Card -->
+            <div class="metric-card glass-panel" id="mem-card">
+                <div class="metric-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                </div>
+                <h2>Memory Usage</h2>
+                <div class="metric-value">
+                    <span id="mem-value">--</span><span class="unit">%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="mem-bar"></div>
+                </div>
+            </div>
+
+            <!-- Instances Card -->
+            <div class="metric-card glass-panel" id="inst-card">
+                 <div class="metric-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                </div>
+                <h2>Active Instances</h2>
+                <div class="metric-value" style="margin-bottom: 20px;">
+                    <span id="inst-value">--</span>
+                </div>
+                <p>Status: <span id="sys-status" class="status-badge">Connecting...</span></p>
+            </div>
+
+        </section>
+
+        <footer>
+            <button id="refresh-btn" class="glass-btn">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                Sync Data
+            </button>
+            <p>Last updated: <span id="timestamp">--</span></p>
+        </footer>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
